@@ -1,4 +1,4 @@
-name: Skipping Workflow
+name: Skip Workflow
 on:
   pull_request:
     types:
