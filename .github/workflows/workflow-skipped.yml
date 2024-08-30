@@ -1,0 +1,21 @@
+name: Skipping Workflow
+on:
+  pull_request:
+    types:
+      [
+        opened,
+        synchronize,
+        reopened,
+        ready_for_review,
+        edited,
+        labeled,
+        milestoned,
+      ]
+jobs:
+  job-skip:
+    runs-on: ubuntu-latest
+    if: false
+    steps:
+      - name: Skip
+        run: |
+          echo "Skipping"

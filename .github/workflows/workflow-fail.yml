@@ -1,0 +1,21 @@
+name: Skipping Workflow
+on:
+  pull_request:
+    types:
+      [
+        opened,
+        synchronize,
+        reopened,
+        ready_for_review,
+        edited,
+        labeled,
+        milestoned,
+      ]
+jobs:
+  job-fail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail
+        run: |
+          echo "Failing"
+          exit 1
