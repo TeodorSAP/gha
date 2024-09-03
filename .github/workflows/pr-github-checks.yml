@@ -63,13 +63,15 @@ jobs:
             exit 1
           fi
 
+  print-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print context
+        run: |
+            echo "ERR MSG: ${{ github.event.repository.full_name }}"
+            echo "MINE: ${{ github.event.pull_request.head.repo.full_name }}"
   PR-Github-Checks-Success:
-    needs:
-      [
-        pr-milestone-check,
-        pr-title-check,
-        pr-prevent-kustomization,
-      ]
+    needs: [pr-milestone-check, pr-title-check, pr-prevent-kustomization]
     runs-on: ubuntu-latest
     if: always()
     steps:
