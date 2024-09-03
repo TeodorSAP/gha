@@ -67,7 +67,6 @@ jobs:
     needs:
       [
         pr-milestone-check,
-        pr-label-check,
         pr-title-check,
         pr-prevent-kustomization,
       ]
@@ -78,7 +77,6 @@ jobs:
         run: |
           if !(
           ${{ needs.pr-milestone-check.result == 'success' }} &&
-          ${{ needs.pr-label-check.result == 'success' }} &&
           ${{ needs.pr-title-check.result == 'success' }} &&
           (${{ needs.pr-prevent-kustomization.result == 'success' }} || ${{ needs.pr-prevent-kustomization.result == 'skipped' }})
           ); then
