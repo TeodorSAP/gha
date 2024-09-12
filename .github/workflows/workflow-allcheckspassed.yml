@@ -22,4 +22,4 @@ jobs:
     steps:
       - uses: wechuli/allcheckspassed@v1
         with:
-          checks_exclude: "check-title"
+          checks_exclude: "pr-title-check"
