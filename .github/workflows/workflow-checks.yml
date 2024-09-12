@@ -12,7 +12,7 @@ on:
         milestoned,
       ]
 jobs:
-  job-fail:
+  check-title:
     runs-on: ubuntu-latest
     steps:
       - name: Check PR Title
