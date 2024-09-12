@@ -21,3 +21,5 @@ jobs:
       contents: read
     steps:
       - uses: wechuli/allcheckspassed@v1
+        with:
+          checks_exclude: "check-title"
