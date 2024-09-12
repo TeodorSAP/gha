@@ -11,6 +11,8 @@ on:
         labeled,
         milestoned,
       ]
+  check_run:
+    types: [requested]
 jobs:
   allchecks:
     runs-on: ubuntu-latest
