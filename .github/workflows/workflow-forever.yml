@@ -1,4 +1,4 @@
-name: All checks pass
+name: Forever
 on:
   pull_request:
     types:
@@ -12,12 +12,13 @@ on:
         milestoned,
       ]
 jobs:
-  allchecks:
+  forever:
     runs-on: ubuntu-latest
-    permissions:
-      checks: read
-      contents: read
     steps:
-      - uses: wechuli/allcheckspassed@v1
-        with:
-          checks_exclude: 'forever'
+      - name: Randomly fail
+        run: |
+          while true; do
+            echo "Running..."
+            sleep 1
+          done
+
